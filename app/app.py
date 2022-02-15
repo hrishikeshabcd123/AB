@@ -3,6 +3,7 @@ import requests
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def my_form():
     return render_template('my-form.html')
@@ -16,5 +17,7 @@ def my_form_post():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
-
+    app.run(debug=TRUE)
     
+
+
