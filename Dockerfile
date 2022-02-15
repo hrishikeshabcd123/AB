@@ -1,7 +1,11 @@
-FROM python:3.6
-COPY . /app
+FROM centos:centos7
+
+COPY ./requirements.txt /app/requirements.txt
+RUN yum install -y python3 python3-pip python3-devel
+
 WORKDIR /app
-RUN pip install -r requirements.txt
-EXPOSE 8080
-ENTRYPOINT ["python"]
-CMD ["app/app.py"]
+RUN pip3 install --no-cache-dir -r requirements.txt
+COPY . /app
+
+ENTRYPOINT ["python3"]
+CMD ["flaskapp.py" ]
