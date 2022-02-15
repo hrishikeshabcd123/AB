@@ -1,5 +1,5 @@
 from flask import Flask,render_template
-import socket
+import requests
 
 app = Flask(__name__)
 
